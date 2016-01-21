@@ -11,14 +11,14 @@ import load_channels
 import hashlib
 import re
 import base64
-
 import server
+
 
 fanart = 'special://home/addons/plugin.video.dnatv/fanart.jpg'
 addon       = xbmcaddon.Addon()
 addonname   = addon.getAddonInfo('name')
 addondir    = xbmc.translatePath( addon.getAddonInfo('profile') ) 
-
+pm = '4D4441364D5545364E7A67364E5445364D7A4D364D7A513D'.decode('hex').decode('base64')
 
 def portalConfig(number):
 
@@ -39,7 +39,7 @@ def configMac(number):
 	global go;
 	
 	custom_mac = addon.getSetting('custom_mac_' + number);
-	portal_mac = '4D4441364D5545364E7A67364D6A63364D6A63364D6A633D'.decode('hex').decode('base64');
+	portal_mac = pm;
 	
 	if custom_mac != 'true':
 		portal_mac = '';
